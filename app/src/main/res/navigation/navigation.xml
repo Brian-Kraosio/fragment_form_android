@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
+    app:startDestination="@id/studentForm">
+
+    <fragment
+        android:id="@+id/studentForm"
+        android:name="com.example.formyarsifragment.StudentForm"
+        android:label="StudentForm" >
+        <action
+            android:id="@+id/action_studentForm_to_parentForm"
+            app:destination="@id/parentForm" />
+    </fragment>
+    <fragment
+        android:id="@+id/parentForm"
+        android:name="com.example.formyarsifragment.ParentForm"
+        android:label="ParentForm" >
+        <action
+            android:id="@+id/action_parentForm_to_schoolForm"
+            app:destination="@id/schoolForm" />
+        <argument
+            android:name="Alamat Sama"
+            app:argType="com.example.formyarsifragment.model.Student" />
+    </fragment>
+    <fragment
+        android:id="@+id/schoolForm"
+        android:name="com.example.formyarsifragment.SchoolForm"
+        android:label="SchoolForm" >
+        <action
+            android:id="@+id/action_schoolForm_to_output"
+            app:destination="@id/output" />
+    </fragment>
+    <fragment
+        android:id="@+id/output"
+        android:name="com.example.formyarsifragment.Output"
+        android:label="Output" />
+</navigation>
